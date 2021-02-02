@@ -1,0 +1,415 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset=UTF-8>
+    <title>GIT Share - By cedric</title>
+    <link rel=stylesheet href=//cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css>
+    <link rel=stylesheet href=//cdn.staticfile.org/prism/1.15.0/themes/prism.min.css>
+    <link rel=stylesheet href=//cdn.staticfile.org/KaTeX/0.10.0-rc.1/katex.min.css>
+    <link rel=stylesheet href=//cdn.staticfile.org/prism/1.15.0/themes/prism-solarizedlight.min.css>
+    <link rel=stylesheet href=./gitshare.css>
+    <link href=./css/chunk-vendors.4e4765ff.css rel=stylesheet>
+</head>
+
+<body>
+    <div>
+        <article id=webslides>
+            <section slide class="slide bg-black-blue aligncenter"
+                image="https://source.unsplash.com/C1HhAQrbykQ/ .dark"><span class="background dark"
+                    style="background-image:url('https://source.unsplash.com/C1HhAQrbykQ/')"></span>
+                <div class=wrap wrap=true>
+                    <h1 class="text-landing text-shadow blob">GIT是怎么一回事?</h1>
+                    <p class=text-intro>By cedric</p>
+                    <p><a href=https://cedric.cowtransfer.com/s/aa89ec1884ae46 class="button ghost"
+                            target=_blank>Download File</a></p>
+                    <style>
+                        .blob {
+                            font-weight: 600;
+                        }
+                    </style>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>😥GIT不就是吗...</h1>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token function">git</span> clone -b branchName https://www.github.com/xxx/xxx
+$ <span class="token function">git</span> <span class="token function">add</span> --all
+$ <span class="token function">git</span> commit -m <span class="token string">"feat: xxx"</span>
+$ <span class="token function">git</span> push origin master:master
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter">
+                <div class=wrap wrap=true>
+                    <h1>打完收工 ! 👌</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter">
+                <div class=wrap wrap=true>
+                    <h1>GIT 简单吗?</h1>
+                    <p>--</p>
+                    <p class=bashCode>GIT不算难, 但真的不好学😂</p>
+                    <style>
+                        .bashCode {
+                            font-size: 20px;
+                        }
+                    </style>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>底层命令 (Plumbing) VS 高阶指令 (Porcelain)</h1>
+                    <p class=titleCommad>早期大部分版本都是底层指令, 都是比较底层的指令,<br>实在不容易上手, 后面才慢慢加入了 add commit这样的高阶指令</p>
+                    <style>
+                        .titleCommad {
+                            text-align: left;
+                            border: 1px solid rgba(0, 0, 0, .2);
+                            padding: 20px;
+                        }
+                    </style>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>20/80 还好的是, 基本满足工作</h1>
+                    <p><br><br></p>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>GIT != SVN + Magic</h1>
+                    <p><br></p>
+                    <ul>
+                        <li>GIT 并不是SVN的升级版本</li>
+                        <li>他们在分支管理 和 档案的管理上都有很大的不同</li>
+                        <li>当成 SVN 升级版, 你可能会出现很多的误解</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>一个小问题</h1>
+                    <h1>add . 和 add --all 有什么不一样?</h1>
+                    <p><br><br></p>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1 class=first>处理档案不同</h1>
+                    <ul>
+                        <li>1.x 版本时候<ul>
+                                <li>git add --all 会处理 新增/修改/删除 的档案</li>
+                                <li>git add . 则只会处理 新增和修改的档案...</li>
+                            </ul>
+                        </li>
+                        <li>2.x版本以后<ul>
+                                <li>add . 和 add --all 就没有这个问题了, 都可以出现 新增/删除/修改的 档案了.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <style>
+                        .first {
+                            font-size: 30px;
+                            padding-bottom: 20px;
+                        }
+                    </style>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <p class=first>另外一点</p>
+                    <ul>
+                        <li>如果你使用 git add --all 不管在档案的哪一个 目录 都是有效的</li>
+                        <li>而 git add . 只处理当前目录 和 子目录档案</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>什么是GIT?</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>GIT 是一种 分散式/分布式 的 版本控制系统</h1>
+                    <p><br></p>
+                    <h1>😥❓</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>分散式 != github</h1>
+                    <p><br></p>
+                    <ul>
+                        <li>分散式并不等于说把 档案存在 git server 上面去.</li>
+                        <li>举个栗子 👧</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>事实上不需要 git server 也可以交换 档案</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>咦, 不是需要Push的吗</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-apple aligncenter" :class=size-40>
+                <div class="wrap size-40" wrap=true>
+                    <h1>Git Bash</h1>
+                    <p><br></p>
+                    <ul>
+                        <li>将commit打包派发出去</li>
+                    </ul>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token function">git</span> format-patch -num HEAD -o /tmp
+</code></pre>
+                    <ul>
+                        <li>apply 将patch吃进来</li>
+                    </ul>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token function">git</span> apply /tmp/*.patch
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-40>
+                <div class="wrap size-40" wrap=true>
+                    <h1>什么是版本 ?</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>想到:: 设计师 开发...</h1>
+                    <h1>😭</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>每次你完成一个任务, 不管是大是小, 新增 修改 或者 删除..</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>每一次这样变化的 状态 =&gt; 版本..</h1>
+                    <h1>👌</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>GIT与其他版控(SVN) 有什么不同?</h1>
+                    <p><br></p>
+                    <ul>
+                        <li class=first>事实上GIT只在乎你等内容, 并不在乎你等档案名称和档案结构</li>
+                        <li class=first>GIT 只是一个内容追踪系统,只是更适合做版本控制</li>
+                        <li class=first>档案名称村哪儿 Tree物件里面😁</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>GIT根本不在乎你..</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>SVN主要记录文件间的差异</h1>
+                    <p><br></p>
+                    <ul>
+                        <li class=first>举个栗子😂</li>
+                    </ul>
+                    <p><br></p>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-70>
+                <div class="wrap size-70" wrap=true>
+                    <h1>GIT 只要档案没有变更, 就不会重新建立档案</h1>
+                    <p><br></p>
+                    <ul>
+                        <li class=first>记录前一次档案的连接</li>
+                        <li class=first>使用像是排快照的方式, 将目录结构拍下来..</li>
+                        <li class=first>举个栗子 😂</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>你听过SHA1演算法吗?</h1>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token function">git</span> log
+
+$ commit <span class="token variable"><span class="token variable">`</span>82e22e39cc21104e5a18066ccbb0826be46cf087<span class="token variable">`</span></span> <span class="token punctuation">(</span>HEAD -<span class="token operator">></span> exercise<span class="token punctuation">)</span>
+$ commit <span class="token variable"><span class="token variable">`</span>a62232bd0d749a786796a38ccf43cbc9843227c3<span class="token variable">`</span></span> <span class="token punctuation">(</span>origin/exercise, origin/HEAD<span class="token punctuation">)</span>
+$ commit <span class="token variable"><span class="token variable">`</span>bed5535a8f17dba49c75e5a50e5c6b6e2a246451<span class="token variable">`</span></span>
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>40位16进制的子元组成</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>f(x) = 5x + 10;</h1>
+                    <p><br></p>
+                    <ul>
+                        <li class=first>像是一种数学函数</li>
+                        <li class=first>输入一样的值,得到一样的结果</li>
+                        <li class=first>输入不一样的值, 得到不一样的结果</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>GIT的SHA1怎么计算的 - 加盐</h1>
+                    <p><br></p>
+                    <ul>
+                        <li>以Blob物件来看<ul>
+                                <li>
+                                    <p>1个 blob 字符</p>
+                                </li>
+                                <li>
+                                    <p>1个 空格 子元</p>
+                                </li>
+                                <li>
+                                    <p>输入内容的长度</p>
+                                </li>
+                                <li>
+                                    <p>1个 Null 结束位置的符号</p>
+                                </li>
+                                <li>
+                                    <p>输入的内容</p>
+                                </li>
+                                <li>
+                                    <p><code>blob &lt;content length&gt;&lt;NULL&gt;&lt;content&gt;</code></p>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>在GIT 世界里面每一个物件都有自己的SHA1值</li>
+                    </ul>
+                    <p><br>URL <a href=https://jingsam.github.io/2018/06/10/git-hash.html target=_blank>1</a> <a
+                            href=https://gitbook.tw/chapters/using-git/how-to-calculate-the-sha1-value.html
+                            target=_blank>2</a></p>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-50>
+                <div class="wrap size-50" wrap=true>
+                    <h1>请git bash帮忙算sha1</h1>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token builtin class-name">echo</span> <span class="token string">'hello'</span> <span class="token operator">|</span> <span class="token function">git</span> hash-object --stdin
+
+<span class="token comment"># ef0493b275aa2080237f676d2ef6559246f56636</span>
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-black-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>档案名称使用SHA1来存储.</h1>
+                    <h1>内容 =&gt; 档案内容 + LZW压缩法</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>git commit 发生了什么?</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>blob tree commit tag物件</h1>
+                    <h1>举个栗子😂</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-blue aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>演示过程 - 画图</h1>
+                    <p>URL <a href=http://onlywei.github.io/explain-git-with-d3/#commit target=_blank>git练习场</a> <a
+                            href=https://gitbook.tw/playground#checkout target=_blank>git练习场2</a> <a
+                            href=https://learngitbranching.js.org/?demo target=_blank>git动画</a></p>
+                </div>
+            </section>
+            <section slide class="slide bg-blue aligncenter" :class=size-40>
+                <div class="wrap size-40" wrap=true>
+                    <h1>git bash 计算物料数</h1>
+                    <pre class=language-bash><code class=language-bash>$ <span class="token function">git</span> count-objects
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>对分支的误会</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>你想象中的分支是什么样子?</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>有点人可能会认为分支是把档案 复制一份出来修改, 改完以后合并回去...事实上并不是如此</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>为什么大家都说在 git 里面开分支很便宜?</h1>
+                    <p><br></p>
+                    <ul>
+                        <li>其实分支只是只想某一个 commit 的一个指标</li>
+                        <li>类似于一个标签 或者是 一个贴纸...</li>
+                        <li>当你不消息删除了某个分支, 或者reset --hard去到某个地方, 其实原来的东西并没有消失, 只是用另外一种格式打包/ 隐藏起来你看不到了而已</li>
+                        <li>所谓的分支其实就只是一个 40个子元的档案而已...</li>
+                        <li>举个栗子😂</li>
+                    </ul>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>fast forword</h1>
+                    <h1>merge</h1>
+                    <h1>rebase</h1>
+                    <pre class=language-bash><code class=language-bash>    $ <span class="token function">git</span> reset HEAD^ --hard
+    $ <span class="token function">git</span> reset ORIG_HEAD --hard
+</code></pre>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>其他GIT场景问题</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>可以下来交流 或者 WeChat</h1>
+                    <h1>177-3877-5404</h1>
+                </div>
+            </section>
+            <section slide class="slide bg-red aligncenter" :class=size-60>
+                <div class="wrap size-60" wrap=true>
+                    <h1>Q&amp;A, 😜</h1>
+                </div>
+            </section>
+        </article>
+    </div>
+    <script src=//cdn.staticfile.org/echarts/4.1.0-release/echarts.min.js></script>
+    <script>window.pluginsOptions = {}
+
+
+
+        document.addEventListener('DOMContentLoaded', () => {
+            let isPrintMode = false;
+            if (~location.search.indexOf('print-pdf')) {
+                isPrintMode = true;
+                WebSlides.registerPlugin('scroll', function () { });
+            }
+            const ws = new WebSlides({
+                loop: false
+            })
+            window.wsInstance = ws;
+            if (isPrintMode) {
+                ws.slides.forEach(s => s.show())
+            }
+        }, false)</script>
+    <script src=./js/chunk-vendors.js></script>
+    <script src=./js/gitshare.js></script>
+</body>
+
+</html>
