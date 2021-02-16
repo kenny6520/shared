@@ -4,9 +4,9 @@
 
 时间：2020年10月23日
 
-主题：ast
+主题： what is ast ?
 
-备注: 借助ruby等结构体功能实现等ast模拟, 用于理解ast，不实用javascript等原因是：js与ruby相比代码量较多并且没有结构这样等实现
+备注: 借助ruby等结构体功能实现等ast模拟, 用于理解ast
 
 --
 
