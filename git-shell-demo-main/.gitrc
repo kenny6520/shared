@@ -1,0 +1,7 @@
+[alias]
+    gp = "! bash ./bin/push.sh"
+    reb = "! bash ./bin/rebase.sh"
+    del = "! bash ./bin/delete.sh"
+    
+    so = "! git remote show origin && ! git remote prune origin"
+    

@@ -1,0 +1,21 @@
+{
+  "name": "gitshell",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install:git": "git config include.path '../.gitrc'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kenny6520/git-shell-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kenny6520/git-shell-demo/issues"
+  },
+  "homepage": "https://github.com/kenny6520/git-shell-demo#readme"
+}
