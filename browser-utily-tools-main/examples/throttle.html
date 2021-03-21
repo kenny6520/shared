@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>throttle</title>
+</head>
+
+<style>
+    body {
+        height: 100vh;
+    }
+</style>
+
+<body>
+    throttle
+</body>
+<script type="module">
+    import { throttle } from '../index.js'
+    document.querySelector("body").onmousemove = throttle(function (e) {
+        console.log(e)
+    }, 2000, { leading: false })
+</script>
+
+</html>

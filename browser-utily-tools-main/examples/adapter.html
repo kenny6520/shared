@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    *,
+    *::after,
+    *::before {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    #container {
+        background-color: #eee;
+        height: 100vh;
+        width: 30vw;
+        padding: 30px;
+    }
+
+    code {
+        margin-right: 30px;
+    }
+</style>
+
+<body>
+    <div style="display:flex">
+        <div id="container" contentEditable></div>
+        <div>
+            <h2>rules</h2>
+            <code>
+            </code>
+            <br />
+            <button id="btn" type="button">转换</button>
+        </div>
+        <div>
+            <h2>result</h2>
+            <code id="convertresult"></code>
+        </div>
+    </div>
+</body>
+
+<script type="module">
+    import { adapterDataFormatSync } from '../index.js';
+    const getNode = selector => document.querySelector(selector);
+
+    const btn = getNode("#btn");
+    const container = getNode('#container');
+    const convertResult = getNode("#convertresult");
+
+    const defaultObject = { age: 10, name: 'Liling', desc: "这是一个测试" };
+    const defaultRules = {
+        age: "number",
+        name: "value"
+    }
+
+    // call
+    initial(
+        container,
+        jsonstringify(defaultObject),
+        jsonstringify(defaultRules)
+    );
+
+    btn.addEventListener("click", function (e) {
+        const result = adapterDataFormatSync(jsonParser(container.innerText), defaultRules);
+        setContainerContent(convertResult, jsonstringify(result))
+    })
+
+    function initial(node, content, rules) {
+        focusNode(node);
+        setContainerContent(node, content);
+        setContainerContent(getNode("code"), rules);
+    }
+
+    function jsonstringify(obj) { return JSON.stringify(obj) }
+    function jsonParser(stringifyJson) { return JSON.parse(stringifyJson) }
+    function focusNode(node) { return node.focus(); }
+    function setContainerContent(node, content) { return node.innerText = content; }
+
+</script>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>type</title>
+</head>
+
+<body>
+    <h2>type</h2>
+</body>
+
+<script type="module">
+    import { types } from '../index.js';
+
+    console.log("类型判断")
+    console.log("===========================")
+    console.log(types.hasType([]))
+    console.log(types.hasType(null))
+    console.log(types.hasType(undefined))
+    console.log(types.hasType(/\[/))
+    console.log(types.hasType(new Date))
+    console.log(types.hasType({}))
+    console.log(types.hasType(10))
+    console.log(types.hasType(new Function()))
+    console.log(types.hasType(!!0))
+    console.log(types.hasType(JSON))
+
+    console.log("")
+    console.log("类型验证")
+    console.log("===========================")
+    console.log(types.isNaN(NaN))
+    console.log(types.isArray([]))
+    console.log(types.isObject({}))
+    console.log(types.isFunction(function () { }))
+    console.log(types.isBoolean(false))
+    console.log(types.isDate(new Date))
+    // ....
+
+</script>
+
+</html>

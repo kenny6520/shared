@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        height: 100vh;
+    }
+</style>
+
+<body>
+    debounce
+</body>
+
+<script type="module">
+    import { debounce } from '../index.js';
+
+    document.querySelector("body")
+        .onmousemove = debounce(function (args) {
+            console.log("测试防抖:", args)
+        }, 200, false);
+</script>
+
+</html>

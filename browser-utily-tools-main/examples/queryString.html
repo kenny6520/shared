@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>query_string</title>
+</head>
+
+<body>
+    query_string
+</body>
+
+<script type="module">
+    import { convertQueryStringToObject, convertObjectToQueryString } from '../index.js';
+    const obj = { age: 10, name: 'liling' }
+    console.log(convertObjectToQueryString(obj));
+    const url = "https://www.console.com?age=10&name=liling"
+    console.log(convertQueryStringToObject(url))
+    console.log(convertQueryStringToObject(convertObjectToQueryString(obj)))
+</script>
+
+</html>
