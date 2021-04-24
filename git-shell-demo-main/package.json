@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "install:git": "git config include.path '../.gitrc'"
+    "install:git": "git config include.path '../.gitrc'",
+    "register": "git config include.path ../gitrc.toml",
+    "update:check": "yarn upgrade-interactive --latest"
   },
   "repository": {
     "type": "git",
