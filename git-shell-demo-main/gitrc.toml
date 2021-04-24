@@ -1,0 +1,27 @@
+# How to use？
+# run the command "yarn run register" in the project directory
+
+# Allows to configure the properties allowed in git, 
+# the same as using the ‘git config’ command line
+
+# You can refer to the following configuration
+# ref: https://git-scm.com/docs/git-config
+# ref: https://gist.github.com/pksunkara/988716
+
+# Refer to toml for the format of configuration
+# https://github.com/toml-lang/toml
+
+[alias]
+
+# base alias
+ba = "! git branch -a"
+prune = "! git remote show origin && ! git remote prune origin"
+
+# customize alias
+rename = "! bash ./bin/rename.sh"
+rbs = "! bash ./bin/rebase.sh"
+
+
+# 不稳定到脚本（更新中）, 请勿用于轻易尝试
+unstable-ps = "! bash ./bin/unstable_push.sh"
+unstable-del = "! bash ./bin/delete.sh"
