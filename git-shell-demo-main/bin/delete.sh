@@ -1,23 +1,32 @@
 #!/usr/bin/env bash
 
-del_local_branch_name=$1
-del_origin_branch=$2
+local_branch_name=$1
+current_branch_name=$(git rev-parse --abbrev-ref HEAD)
 
-# 删除本地分支
-echo "开始删除本地${del_local_branch_name}分支"
-git branch -d $del_origin_branch
+handle_error_prompt(){
+    local message="$1"
+    echo "Error: $message"
+}
 
-# 没有填写第二个参数
-if [ del_origin_branch == "" ]; then
-    read -r -p "是否同时删除同名的远程分支" is_delete
-    case $is_open in
-    [yY][eE][sS] | [yY])
-        git push origin --delete ${del_local_branch_name}
+delete_branch(){
+    local delete_branch="$1"
+
+    read -r -p "Note: 是否同时删除对应远程分支？ [y/n]" is_delete_remote_branch
+    case "$is_delete_remote_branch" in 
+        [yY][eE][sS] | [yY])
+            git branch -d $delete_branch
+            git push origin --delete $delete_branch
+            exit 1
         ;;
-    *) git rebase $target_branch ;;
+        [nN][oO] | [nN])
+            git branch -d $delete_branch
+            exit 1
+        ;;
     esac
-    exit 1
+}
+
+if [[ $current_branch_name == $local_branch_name ]] ; then
+    handle_error_prompt "不能删除当前的分支, HEAD指向删除的分支"
 else
-    git push origin --delete ${del_local_branch_name}
-    exit 1
+    delete_branch ${local_branch_name}
 fi
